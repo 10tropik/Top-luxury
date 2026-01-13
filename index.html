@@ -13,96 +13,58 @@
     </header>
 
     <main>
-        <!-- Sacs de luxe -->
+        <!-- Catégories principales -->
         <section class="categories">
             <h2>Sacs de luxe</h2>
-            <div class="cases">
-                <!-- 20 lignes pour chaque case, image + titre + description -->
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="lv">Louis Vuitton</div>
+            <div class="case" data-category="hermes">Hermès</div>
+            <div class="case" data-category="miumiu">Miu Miu</div>
+            <div class="case" data-category="balenciaga">Balenciaga</div>
+            <div class="case" data-category="dior">Dior</div>
+            <div class="case" data-category="gucci">Gucci</div>
+            <div class="case" data-category="celine">Celine</div>
+            <div class="case" data-category="ysl">Yves Saint Laurent</div>
+            <div class="case" data-category="chanel">Chanel</div>
         </section>
 
-        <!-- Vêtements de luxe -->
         <section class="categories">
             <h2>Vêtements de luxe</h2>
-            <div class="cases">
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="tshirt">T-shirt</div>
+            <div class="case" data-category="veste">Veste</div>
+            <div class="case" data-category="sweatshirt">Sweatshirt</div>
+            <div class="case" data-category="maillot">Maillot de baseball</div>
+            <div class="case" data-category="chemise">Chemise</div>
+            <div class="case" data-category="short">Short</div>
+            <div class="case" data-category="pantalon">Pantalon</div>
+            <div class="case" data-category="jeans">Jeans</div>
+            <div class="case" data-category="moncler">Moncler</div>
         </section>
 
-        <!-- Chaussures de luxe -->
         <section class="categories">
             <h2>Chaussures de luxe</h2>
-            <div class="cases">
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="lv_shoes">Louis Vuitton</div>
+            <div class="case" data-category="gucci_shoes">Gucci</div>
+            <div class="case" data-category="balenciaga_shoes">Balenciaga</div>
         </section>
 
-        <!-- Talons de luxe -->
         <section class="categories">
             <h2>Talons de luxe</h2>
-            <div class="cases">
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="lv_heels">LV High Heels</div>
         </section>
 
-        <!-- Montres de luxe -->
         <section class="categories">
             <h2>Top luxe de montres</h2>
-            <div class="cases">
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="cartier">Cartier</div>
         </section>
 
-        <!-- Accessoires de luxe -->
         <section class="categories">
             <h2>Accessoires de luxe</h2>
-            <div class="cases">
-                <div class="case">
-                    <img src="images/placeholder.png" alt="Produit 1">
-                    <div class="case-text">
-                        <h3>Produit 1</h3>
-                        <p>Description du produit 1</p>
-                    </div>
-                </div>
-                <!-- Dupliquer jusqu'à 20 -->
-            </div>
+            <div class="case" data-category="collier">Collier</div>
+            <div class="case" data-category="bague">Bague</div>
         </section>
+
+        <!-- Container pour afficher les produits -->
+        <section id="products-container"></section>
     </main>
 
     <script src="js/app.js"></script>
