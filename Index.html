@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Shop Futuriste</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Luxury Shop Futuriste</h1>
+  <a href="https://wa.me/TONNUMERO" target="_blank" class="whatsapp-float">
+    <img src="images/whatsapp-icon.png" alt="Contact WhatsApp">
+  </a>
+</header>
+
+<main>
+  <!-- Exemple d'une catégorie -->
+  <section class="category">
+    <h2>Sacs de luxe</h2>
+    <div class="products-grid" id="sacs-de-luxe"></div>
+    <button class="add-product-btn" data-category="sacs-de-luxe">Ajouter un produit</button>
+  </section>
+
+  <section class="category">
+    <h2>Vêtements de luxe</h2>
+    <div class="products-grid" id="vetements-de-luxe"></div>
+    <button class="add-product-btn" data-category="vetements-de-luxe">Ajouter un produit</button>
+  </section>
+
+  <section class="category">
+    <h2>Chaussures de luxe</h2>
+    <div class="products-grid" id="chaussures-de-luxe"></div>
+    <button class="add-product-btn" data-category="chaussures-de-luxe">Ajouter un produit</button>
+  </section>
+
+  <section class="category">
+    <h2>Talons de luxe</h2>
+    <div class="products-grid" id="talons-de-luxe"></div>
+    <button class="add-product-btn" data-category="talons-de-luxe">Ajouter un produit</button>
+  </section>
+
+  <section class="category">
+    <h2>Montres de luxe</h2>
+    <div class="products-grid" id="montres-de-luxe"></div>
+    <button class="add-product-btn" data-category="montres-de-luxe">Ajouter un produit</button>
+  </section>
+
+  <section class="category">
+    <h2>Accessoires de luxe</h2>
+    <div class="products-grid" id="accessoires-de-luxe"></div>
+    <button class="add-product-btn" data-category="accessoires-de-luxe">Ajouter un produit</button>
+  </section>
+</main>
+
+<!-- Formulaire modale pour ajouter un produit -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <h3>Ajouter un produit</h3>
+    <input type="text" id="product-name" placeholder="Nom du produit">
+    <textarea id="product-desc" placeholder="Description"></textarea>
+    <input type="text" id="product-img" placeholder="URL de l'image">
+    <button id="save-product">Enregistrer</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
