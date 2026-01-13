@@ -1,82 +1,71 @@
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #111;
+    color: #fff;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    font-size: 2em;
-    letter-spacing: 2px;
-    color: #ffcc00;
+    background: linear-gradient(90deg, #222, #444);
+    box-shadow: 0 0 10px #0ff;
 }
 
 .categories {
-    margin: 30px;
-}
-
-.categories h2 {
-    color: #ffcc00;
-    margin-bottom: 15px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.cases {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    gap: 15px;
 }
 
 .case {
-    width: 160px; /* plus petit pour mobile */
-    height: 200px;
-    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 14px;
-    text-align: center;
+    background: #222;
+    border: 2px solid #0ff;
+    padding: 15px 20px;
     cursor: pointer;
-    padding: 10px;
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.case img {
+.case:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff;
+}
+
+#products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.product {
+    background: #222;
+    border: 2px solid #0ff;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
 }
 
-.case:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+.product:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #0ff;
 }
 
-.case-text {
-    margin-top: 5px;
-}
-
-.case-text h3 {
-    font-size: 14px;
-    margin: 2px 0;
-}
-
-.case-text p {
-    font-size: 12px;
-    margin: 0;
-    color: #cccccc;
-}
-
-/* Responsive mobile */
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
     .case {
-        width: calc(20% - 10px); /* 5 cases par ligne */
+        width: 45%;
+    }
+    .product {
+        width: 45%;
     }
 }
