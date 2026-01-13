@@ -1,49 +1,56 @@
-// Listes de produits initiales
-const products = {
-    sacs: ["Louis Vuitton", "Hermès", "Miu Miu", "Balenciaga", "Dior", "Gucci", "Celine", "Yves Saint Laurent", "Chanel"],
-    vetements: ["T-shirt", "Veste en jean", "Sweatshirt à capuche", "Maillot de baseball", "Col", "Short", "Chemise", "Pantalon", "Jeans", "Moncler", "The North Face", "Canada Goose", "Veste interchangé"],
-    chaussures: ["Louis Vuitton", "Gucci", "Balenciaga", "Givenchy", "Amiri", "Mc Queen", "Wu Jianhao", "Hermes", "Burberry", "Dior", "High luxury", "Fendi", "UGG Snow"],
-    talons: ["LV high heels", "Gucci high heels", "Dior high heels", "YSL high heels", "Valentino high heels", "Celine high heels", "Chanel high heels", "Jimmy Zhou's high heels", "BV high heels", "Prada high heels", "Hermes high heels", "Miu Miu high heels", "Versace high heels", "Alexander King High Heels", "Ferragamo high heels"],
-    montres: ["Cartier", "Vacheron Constantin", "Rolex", "Longines", "Richard M", "Omega", "Panerai", "Audemars Piguet", "Baobo", "Patek Philippe", "Bai Lai Shi", "Glashütte Original", "Jaeger-LeCoultre", "Chopin"],
-    accessoires: ["Collier", "Bague", "Bracelet", "Lunettes", "Ceinture", "Casquette", "Écharpe", "Chaussettes"]
+const productsData = {
+    // Sacs de luxe
+    lv: Array.from({length:20}, (_, i) => ({name:`Louis Vuitton ${i+1}`, desc:`Description LV ${i+1}`, img:'images/placeholder.png'})),
+    hermes: Array.from({length:20}, (_, i) => ({name:`Hermès ${i+1}`, desc:`Description Hermès ${i+1}`, img:'images/placeholder.png'})),
+    miumiu: Array.from({length:20}, (_, i) => ({name:`Miu Miu ${i+1}`, desc:`Description Miu Miu ${i+1}`, img:'images/placeholder.png'})),
+    balenciaga: Array.from({length:20}, (_, i) => ({name:`Balenciaga ${i+1}`, desc:`Description Balenciaga ${i+1}`, img:'images/placeholder.png'})),
+    dior: Array.from({length:20}, (_, i) => ({name:`Dior ${i+1}`, desc:`Description Dior ${i+1}`, img:'images/placeholder.png'})),
+    gucci: Array.from({length:20}, (_, i) => ({name:`Gucci ${i+1}`, desc:`Description Gucci ${i+1}`, img:'images/placeholder.png'})),
+    celine: Array.from({length:20}, (_, i) => ({name:`Celine ${i+1}`, desc:`Description Celine ${i+1}`, img:'images/placeholder.png'})),
+    ysl: Array.from({length:20}, (_, i) => ({name:`YSL ${i+1}`, desc:`Description YSL ${i+1}`, img:'images/placeholder.png'})),
+    chanel: Array.from({length:20}, (_, i) => ({name:`Chanel ${i+1}`, desc:`Description Chanel ${i+1}`, img:'images/placeholder.png'})),
+
+    // Vêtements de luxe
+    tshirt: Array.from({length:20}, (_, i) => ({name:`T-shirt ${i+1}`, desc:`Description T-shirt ${i+1}`, img:'images/placeholder.png'})),
+    veste: Array.from({length:20}, (_, i) => ({name:`Veste ${i+1}`, desc:`Description Veste ${i+1}`, img:'images/placeholder.png'})),
+    sweatshirt: Array.from({length:20}, (_, i) => ({name:`Sweatshirt ${i+1}`, desc:`Description Sweatshirt ${i+1}`, img:'images/placeholder.png'})),
+    maillot: Array.from({length:20}, (_, i) => ({name:`Maillot ${i+1}`, desc:`Description Maillot ${i+1}`, img:'images/placeholder.png'})),
+    chemise: Array.from({length:20}, (_, i) => ({name:`Chemise ${i+1}`, desc:`Description Chemise ${i+1}`, img:'images/placeholder.png'})),
+    short: Array.from({length:20}, (_, i) => ({name:`Short ${i+1}`, desc:`Description Short ${i+1}`, img:'images/placeholder.png'})),
+    pantalon: Array.from({length:20}, (_, i) => ({name:`Pantalon ${i+1}`, desc:`Description Pantalon ${i+1}`, img:'images/placeholder.png'})),
+    jeans: Array.from({length:20}, (_, i) => ({name:`Jeans ${i+1}`, desc:`Description Jeans ${i+1}`, img:'images/placeholder.png'})),
+    moncler: Array.from({length:20}, (_, i) => ({name:`Moncler ${i+1}`, desc:`Description Moncler ${i+1}`, img:'images/placeholder.png'})),
+
+    // Chaussures de luxe
+    lv_shoes: Array.from({length:20}, (_, i) => ({name:`LV Chaussure ${i+1}`, desc:`Description LV Chaussure ${i+1}`, img:'images/placeholder.png'})),
+    gucci_shoes: Array.from({length:20}, (_, i) => ({name:`Gucci Chaussure ${i+1}`, desc:`Description Gucci Chaussure ${i+1}`, img:'images/placeholder.png'})),
+    balenciaga_shoes: Array.from({length:20}, (_, i) => ({name:`Balenciaga Chaussure ${i+1}`, desc:`Description Balenciaga Chaussure ${i+1}`, img:'images/placeholder.png'})),
+
+    // Talons de luxe
+    lv_heels: Array.from({length:20}, (_, i) => ({name:`LV Talon ${i+1}`, desc:`Description LV Talon ${i+1}`, img:'images/placeholder.png'})),
+
+    // Montres de luxe
+    cartier: Array.from({length:20}, (_, i) => ({name:`Cartier ${i+1}`, desc:`Description Cartier ${i+1}`, img:'images/placeholder.png'})),
+
+    // Accessoires
+    collier: Array.from({length:20}, (_, i) => ({name:`Collier ${i+1}`, desc:`Description Collier ${i+1}`, img:'images/placeholder.png'})),
+    bague: Array.from({length:20}, (_, i) => ({name:`Bague ${i+1}`, desc:`Description Bague ${i+1}`, img:'images/placeholder.png'}))
 };
 
-// Fonction pour afficher les produits dans chaque catégorie
-function renderProducts() {
-    for (const category in products) {
-        const container = document.getElementById(category);
-        container.innerHTML = '';
-        products[category].forEach(name => {
+const cases = document.querySelectorAll('.case');
+const productsContainer = document.getElementById('products-container');
+
+cases.forEach(c => {
+    c.addEventListener('click', () => {
+        const category = c.dataset.category;
+        const products = productsData[category] || [];
+        productsContainer.innerHTML = '';
+        products.forEach(p => {
             const div = document.createElement('div');
-            div.className = 'case';
-            div.innerHTML = `<span>${name}</span>`;
-            container.appendChild(div);
-
-            div.addEventListener('click', () => {
-                div.style.boxShadow = '0 0 30px #ffcc00, 0 0 60px #ffcc00';
-                setTimeout(() => { div.style.boxShadow = ''; }, 300);
-            });
+            div.className = 'product';
+            div.innerHTML = `<img src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><p>${p.desc}</p>`;
+            productsContainer.appendChild(div);
         });
-    }
-}
-
-// Ajouter produit depuis le formulaire
-document.getElementById('addProductBtn').addEventListener('click', () => {
-    const name = document.getElementById('productName').value;
-    const desc = document.getElementById('productDesc').value;
-    const image = document.getElementById('productImage').files[0];
-
-    if(!name) return alert('Nom du produit requis');
-
-    // Pour l'instant, on ajoute seulement le nom dans "sacs" par défaut
-    products.sacs.push(name);
-    renderProducts();
-
-    // Réinitialiser le formulaire
-    document.getElementById('productName').value = '';
-    document.getElementById('productDesc').value = '';
-    document.getElementById('productImage').value = '';
+        window.scrollTo({ top: productsContainer.offsetTop, behavior: 'smooth' });
+    });
 });
-
-// Initialiser l’affichage
-renderProducts();
