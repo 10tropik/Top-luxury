@@ -8,19 +8,19 @@ body {
 
 header {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     font-size: 2em;
     letter-spacing: 2px;
     color: #ffcc00;
 }
 
 .categories {
-    margin: 40px;
+    margin: 30px;
 }
 
 .categories h2 {
     color: #ffcc00;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -29,74 +29,54 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .case {
-    width: 200px;
+    width: 160px; /* plus petit pour mobile */
     height: 200px;
     background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
     border-radius: 12px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
+    justify-content: flex-start;
+    font-size: 14px;
     text-align: center;
     cursor: pointer;
+    padding: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.case img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .case:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
 }
 
-.case span {
-    display: inline-block;
-    transition: 0.2s;
+.case-text {
+    margin-top: 5px;
 }
 
-.case:hover span {
-    animation: lightup 0.5s ease forwards;
+.case-text h3 {
+    font-size: 14px;
+    margin: 2px 0;
 }
 
-@keyframes lightup {
-    0% { color: #ffffff; }
-    50% { color: #ffcc00; transform: translateY(-3px); }
-    100% { color: #ffffff; transform: translateY(0); }
+.case-text p {
+    font-size: 12px;
+    margin: 0;
+    color: #cccccc;
 }
 
-/* Formulaire ajouter produit */
-.add-product-section {
-    background-color: #1e1e1e;
-    padding: 20px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.add-product-section input,
-.add-product-section textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-}
-
-.add-product-section button {
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.add-product-section button:hover {
-    background-color: #e6b800;
+/* Responsive mobile */
+@media screen and (max-width: 768px) {
+    .case {
+        width: calc(20% - 10px); /* 5 cases par ligne */
+    }
 }
